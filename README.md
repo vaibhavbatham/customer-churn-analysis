@@ -164,6 +164,10 @@ All metrics have been 100% mathematically cross-validated across **PostgreSQL**,
 ```text
 customer-churn-analysis/
 ├── README.md                               # Executive portfolio presentation
+├── docs/                                   # Live GitHub Pages interactive multi-page web portal
+│   ├── index.html                          # 9-view enterprise SaaS BI portal (Chart.js & Tailwind)
+│   ├── data/                               # Embedded datasets & SQL scripts for client-side engine
+│   └── screenshots/                        # Power BI dashboard visuals & assets
 ├── data/
 │   ├── raw/
 │   │   └── customer_churn_raw.csv          # Raw 7,043 source dataset

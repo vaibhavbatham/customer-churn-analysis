@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+import json
+import os
+
+print("Starting generation of docs/index.html...")
+
+with open('docs/data/sql_scripts.json', 'r') as f:
+    sql_scripts = json.load(f)
+
+with open('powerbi/powerbi_dax_measures.dax', 'r') as f:
+    dax_code = f.read()
+
+# Generate index.html content
+html_parts = []
+
+html_parts.append(r'''<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -1014,110 +1028,7 @@
                         </button>
                     </div>
                     <div class="h-64 overflow-y-auto rounded-xl bg-slate-950 p-3 border border-slate-800 text-[11px] font-mono text-slate-300">
-                        <pre><code class="language-sql" id="daxCodeBlock">// ============================================================================
-// Customer Churn & Revenue Risk Analysis (SaaS / Subscription Business)
-// File: powerbi_dax_measures.dax
-// Description: Production-grade DAX measure definitions for Power BI.
-// ============================================================================
-
-// ----------------------------------------------------------------------------
-// 1. CORE VOLUME MEASURES
-// ----------------------------------------------------------------------------
-
-Total Customers = 
-COUNTROWS('dim_customers')
-
-Churned Customers = 
-CALCULATE(
-    COUNTROWS('dim_customers'),
-    'dim_customers'[customer_status] = "Churned"
-)
-
-Retained Customers = 
-CALCULATE(
-    COUNTROWS('dim_customers'),
-    'dim_customers'[customer_status] = "Retained"
-)
-
-// ----------------------------------------------------------------------------
-// 2. RATES & PERCENTAGES
-// ----------------------------------------------------------------------------
-
-Churn Rate = 
-DIVIDE([Churned Customers], [Total Customers], 0)
-
-Retention Rate = 
-DIVIDE([Retained Customers], [Total Customers], 0)
-
-// ----------------------------------------------------------------------------
-// 3. REVENUE (MRR) MEASURES
-// ----------------------------------------------------------------------------
-
-Total MRR = 
-SUM('dim_customers'[MonthlyCharges])
-
-MRR at Risk = 
-CALCULATE(
-    SUM('dim_customers'[MonthlyCharges]),
-    'dim_customers'[customer_status] = "Churned"
-)
-
-% MRR at Risk = 
-DIVIDE([MRR at Risk], [Total MRR], 0)
-
-Retained MRR = 
-CALCULATE(
-    SUM('dim_customers'[MonthlyCharges]),
-    'dim_customers'[customer_status] = "Retained"
-)
-
-// ----------------------------------------------------------------------------
-// 4. AVERAGES & CUSTOMER LIFETIME
-// ----------------------------------------------------------------------------
-
-Average Monthly Charges = 
-AVERAGE('dim_customers'[MonthlyCharges])
-
-Average Tenure Months = 
-AVERAGE('dim_customers'[tenure])
-
-Average MRR per Churned Customer = 
-DIVIDE([MRR at Risk], [Churned Customers], 0)
-
-// ----------------------------------------------------------------------------
-// 5. ADVANCED SEGMENTATION & PARETO
-// ----------------------------------------------------------------------------
-
-Cumulative MRR at Risk = 
-VAR CurrentCustomerMRR = SELECTEDVALUE('dim_customers'[MonthlyCharges])
-RETURN
-CALCULATE(
-    [MRR at Risk],
-    FILTER(
-        ALLSELECTED('dim_customers'),
-        'dim_customers'[MonthlyCharges] &gt;= CurrentCustomerMRR
-    )
-)
-
-Pareto % of Lost MRR = 
-DIVIDE([Cumulative MRR at Risk], CALCULATE([MRR at Risk], ALLSELECTED('dim_customers')), 0)
-
-// ----------------------------------------------------------------------------
-// 6. CONTRACT-SPECIFIC MEASURES
-// ----------------------------------------------------------------------------
-
-Month to Month Churn Rate = 
-CALCULATE(
-    [Churn Rate],
-    'dim_customers'[Contract] = "Month-to-month"
-)
-
-Annual Contract Churn Rate = 
-CALCULATE(
-    [Churn Rate],
-    'dim_customers'[Contract] IN {"One year", "Two year"}
-)
-</code></pre>
+                        <pre><code class="language-sql" id="daxCodeBlock">''' + dax_code.replace('<', '&lt;').replace('>', '&gt;') + r'''</code></pre>
                     </div>
                 </div>
             </div>
@@ -2319,3 +2230,10 @@ CALCULATE(
     </script>
 </body>
 </html>
+''')
+
+final_html = "".join(html_parts)
+with open('docs/index.html', 'w') as f:
+    f.write(final_html)
+
+print(f"Successfully wrote docs/index.html ({len(final_html)} bytes)")

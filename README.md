@@ -1,8 +1,8 @@
 # Customer Churn & Recurring Revenue Risk Analysis
 ### Enterprise SaaS & Subscription Business Intelligence Case Study
 
-[![Live Interactive Dashboard](https://img.shields.io/badge/Live_Demo-Interactive_Dashboard-success?style=for-the-badge&logo=googlechrome)](https://vaibhavbatham.github.io/customer-churn-analysis/)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/vaibhavbatham/customer-churn-analysis)
+[![Live Interactive Dashboard](https://img.shields.io/badge/Live_Demo-Interactive_Dashboard-success?style=for-the-badge&logo=googlechrome)](https://utsav2311.github.io/customer-churn-analysis/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/utsav2311/customer-churn-analysis)
 
 ![Data Analytics](https://img.shields.io/badge/Domain-SaaS_Subscription_Analytics-blue.svg)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL_16-336791.svg)
@@ -11,7 +11,7 @@
 ![Power BI](https://img.shields.io/badge/Power_BI-DAX_|_Interactive_Dashboards-f2c811.svg)
 ![Dataset](https://img.shields.io/badge/Population-7,043_Validated_Records-success.svg)
 
-> **🚀 Live Hosted Application:** Access the live interactive web dashboard at **[https://vaibhavbatham.github.io/customer-churn-analysis/](https://vaibhavbatham.github.io/customer-churn-analysis/)**
+> **🚀 Live Hosted Application:** Access the live interactive web dashboard at **[https://utsav2311.github.io/customer-churn-analysis/](https://utsav2311.github.io/customer-churn-analysis/)**
 
 ---
 

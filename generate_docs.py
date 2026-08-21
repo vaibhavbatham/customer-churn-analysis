@@ -135,7 +135,7 @@ html_parts.append(r'''<!DOCTYPE html>
                 <span class="hidden sm:inline text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> 100% Cross-Reconciled across SQL, Python, Excel & Power BI</span>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://github.com/vaibhavbatham/customer-churn-analysis" target="_blank" class="text-slate-300 hover:text-white transition flex items-center gap-1.5 font-medium">
+                <a href="https://github.com/utsav2311/customer-churn-analysis" target="_blank" class="text-slate-300 hover:text-white transition flex items-center gap-1.5 font-medium">
                     <i class="fa-brands fa-github text-sm"></i> GitHub Repository
                 </a>
                 <span class="text-slate-600">•</span>
@@ -179,7 +179,7 @@ html_parts.append(r'''<!DOCTYPE html>
 
                 <!-- GitHub Button -->
                 <div class="flex items-center gap-2">
-                    <a href="https://github.com/vaibhavbatham/customer-churn-analysis" target="_blank" class="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg shadow-md shadow-blue-600/30 transition flex items-center gap-2">
+                    <a href="https://github.com/utsav2311/customer-churn-analysis" target="_blank" class="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg shadow-md shadow-blue-600/30 transition flex items-center gap-2">
                         <i class="fa-brands fa-github text-sm"></i> Star on GitHub
                     </a>
                 </div>
@@ -1536,7 +1536,7 @@ html_parts.append(r'''<!DOCTYPE html>
                 <span>Customer Churn & Revenue Risk Analysis Portfolio Project</span>
             </div>
             <div class="flex flex-wrap items-center gap-4 text-slate-400">
-                <a href="https://github.com/vaibhavbatham/customer-churn-analysis" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github mr-1"></i> GitHub Repo</a>
+                <a href="https://github.com/utsav2311/customer-churn-analysis" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github mr-1"></i> GitHub Repo</a>
                 <span>•</span>
                 <a href="data/customer_churn_clean.csv" download class="hover:text-white transition"><i class="fa-solid fa-file-csv mr-1"></i> Cleaned CSV</a>
                 <span>•</span>

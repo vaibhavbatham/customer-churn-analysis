@@ -1,0 +1,20 @@
+# Automated 12-Point Data Quality Audit Report
+
+**Audited Dataset:** `customer_churn_raw.csv` (7,043 Records)
+
+| Check ID | Check Name | Target Column | Expected Condition | Actual Result | Status | Details |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- |
+| DQ-01 | Total Census Row Count | All Columns | Exactly 7,043 rows | 7,043 rows | PASS | Verified exact census population |
+| DQ-02 | Primary Key Uniqueness | customerID | 0 duplicate IDs (100% unique) | 0 duplicates (7,043 unique IDs) | PASS | Zero duplicate customer IDs detected |
+| DQ-03 | Primary Key Integrity | customerID | 0 null or blank strings | 0 blank or null IDs | PASS | Every customer has a valid alphanumeric ID |
+| DQ-04 | TotalCharges Missingness Profiling | TotalCharges | Identify whitespace strings (all with tenure=0) | 11 blank records (100% have tenure=0) | PASS | Exactly 11 accounts are new unbilled month-0 subscribers |
+| DQ-05 | MonthlyCharges Positive Boundary | MonthlyCharges | MonthlyCharges > $0.00 | Min: $18.25, Max: $118.75 (0 non-positive) | PASS | All subscription charges are valid positive amounts |
+| DQ-06 | Customer Tenure Range | tenure | 0 <= tenure <= 120 months | Min: 0M, Max: 72M (0 out-of-bounds) | PASS | All customer tenures fall within realistic subscription horizons |
+| DQ-07 | Contract Type Categorical Domain | Contract | Subset of {Month-to-month, One year, Two year} | 3 categories present (0 invalid) | PASS | Contract terms strictly conform to business definitions |
+| DQ-08 | Churn Outcome Categorical Domain | Churn | Binary {Yes, No} | {'No', 'Yes'} (0 invalid) | PASS | Outcome labels strictly binary |
+| DQ-09 | Payment Method Categorical Domain | PaymentMethod | Subset of 4 defined payment instruments (Check/Transfer/Card) | 4 categories present (0 invalid) | PASS | All 4 billing payment methods verified (Electronic/Mailed Check, Bank/Card Auto) |
+| DQ-10 | Internet Service Categorical Domain | InternetService | Subset of {DSL, Fiber optic, No} | 3 categories present (0 invalid) | PASS | Core product tiers verified |
+| DQ-11 | SeniorCitizen Binary Flag | SeniorCitizen | Binary {0, 1} | {np.int64(0), np.int64(1)} (0 invalid) | PASS | Age demographic indicator verified |
+| DQ-12 | Post-Imputation TotalCharges Verification | TotalCharges_Clean | 0 nulls; tenure=0 records imputed strictly to 0.00 | 0 nulls; tenure=0 values = [np.float64(0.0)] | PASS | Business-rule imputation verified across all 11 records |
+
+**Audit Summary:** All critical integrity, boundary, uniqueness, and domain checks PASSED.

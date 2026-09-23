@@ -113,9 +113,9 @@ SELECT
     
     -- Monthly Charges Tier
     CASE 
-        WHEN monthly_charges < 35.00 THEN 'Low (<)'
-        WHEN monthly_charges <= 75.00 THEN 'Medium (-)'
-        ELSE 'High (>)'
+        WHEN monthly_charges < 35.00 THEN 'Low (<$35)'
+        WHEN monthly_charges <= 75.00 THEN 'Medium ($35-$75)'
+        ELSE 'High (>$75)'
     END AS mrr_tier,
     
     -- Churn Risk Tier

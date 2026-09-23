@@ -1,5 +1,5 @@
-risk_segment,total_customers,churned_customers,total_mrr,mrr_at_risk,churn_rate,pct_of_total_mrr_risk
-Tier 1: Critical (High Churn & High MRR),641,457,55525.8,39860.75,0.7129485179407177,0.28649828560667895
-Tier 2: High Churn / Low-Med MRR,1353,567,60560.7,28440.7,0.4190687361419069,0.20441692119325086
-Tier 3: High MRR / Med-Low Churn,2479,624,234141.85,59100.5,0.2517144009681323,0.42478357603651534
-Tier 4: Stable Base (Low Risk & Low-Med MRR),2570,221,105888.25,11728.9,0.08599221789883268,0.08430121716355504
+risk_segment,total_customers,churned_customers,total_mrr,mrr_at_risk,customer_share_pct,churn_rate_pct,pct_of_lost_mrr
+Tier 1: Critical (High Churn & High MRR),2295,1187,197096.0,102241.6,32.59,51.72,73.49
+Tier 2: High Churn / Low-Med MRR,1580,468,60198.15,18605.5,22.43,29.62,13.37
+Tier 3: High MRR / Med-Low Churn,1609,168,148072.45,16318.4,22.85,10.44,11.73
+Tier 4: Stable Base (Low Risk & Low-Med MRR),1559,46,50750.0,1965.35,22.14,2.95,1.41

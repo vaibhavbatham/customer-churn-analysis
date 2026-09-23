@@ -1,0 +1,4 @@
+contract_type,total_customers,churned_customers,churn_rate_pct,total_mrr,mrr_at_risk,pct_of_total_mrr_lost,cumulative_mrr_lost,risk_rank
+Month-to-month,3875,1655,42.71,257294.15,120847.1,86.86,120847.1,1
+One year,1473,166,11.27,95816.6,14118.45,10.15,134965.55000000002,2
+Two year,1695,48,2.83,103005.85,4165.3,2.99,139130.85,3

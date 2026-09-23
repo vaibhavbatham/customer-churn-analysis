@@ -1,0 +1,2 @@
+total_customer_population,total_churned_customers,total_retained_customers,overall_churn_rate_pct,overall_retention_rate_pct,total_monthly_recurring_revenue,total_mrr_at_risk,mrr_at_risk_pct,average_tenure_months,average_monthly_charges
+7043,1869,5174,26.54,73.46,456116.6,139130.85,30.5,32.37,64.76
